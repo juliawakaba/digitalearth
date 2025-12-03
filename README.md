@@ -16,3 +16,31 @@ Over the years, we have seen the migration of flamingoes away from the lake. Thi
 
 3. **Lake Nakuru GIF showing increase in water levels between 2017 and 2024**  
    <img width="580" alt="Lake Nakuru Water Increase 2017-2024" src="https://github.com/user-attachments/assets/9dff3e9a-96fa-421e-92fb-632d5631a834" />
+
+## About the code:
+- I used the Sentinel-2 imagery collection: 
+```
+var s2 = ee.ImageCollection('COPERNICUS/S2_HARMONIZED');
+```
+- Filter the images based on dates:
+
+```
+//Before
+var s2_nakuru_before = s2.filterBounds(aoi)
+  .filterDate('2016-01-01', '2016-12-31')
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 10)
+  .sort('CLOUDY_PIXEL_PERCENTAGE');
+
+// After
+var s2_nakuru_after = s2.filterBounds(aoi)
+  .filterDate('2024-01-01', '2024-12-31')
+  .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', 10)
+  .sort('CLOUDY_PIXEL_PERCENTAGE');
+```
+- Bands used are
+1. B11 which has a wavelength:	1.610–1.670	SWIR (Shortwave Infrared 1). It is sensitive to moisture content, soil and water detection
+2. B8 which has a wavelength:	0.785–0.900	NIR (Near Infrared). It is useful for vegetation indices and water/land discrimination.
+3. B3 which has a wavelength:	0.560–0.590	Green – visible green band.
+
+- Added a slider
+- Added a gif to show the increase in water levels
