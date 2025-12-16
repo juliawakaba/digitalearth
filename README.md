@@ -44,3 +44,6 @@ var s2_nakuru_after = s2.filterBounds(aoi)
 
 - Added a slider
 - Added a gif to show the increase in water levels
+
+  Credits: Digital Earth Class Winter Semester 2025
+  conducted by: Prof. Martin Sudmanns, Prof. T. Dieke, Dr. Karima
