@@ -18,6 +18,11 @@ Over the years, we have seen the migration of flamingoes away from the lake. Thi
    <img width="580" alt="Lake Nakuru Water Increase 2017-2024" src="https://github.com/user-attachments/assets/9dff3e9a-96fa-421e-92fb-632d5631a834" />
 
 ## About the code:
+- - **Leaf Area Index (LAI) Estimation**  
+  LAI is computed using a Sentinel Hub custom script applied to Sentinel-2 data.  
+  The implementation follows the official Sentinel Hub LAI algorithm:  
+  https://github.com/sentinel-hub/custom-scripts/blob/main/sentinel-2/lai/script.js
+
 - I used the Sentinel-2 imagery collection: 
 ```
 var s2 = ee.ImageCollection('COPERNICUS/S2_HARMONIZED');
